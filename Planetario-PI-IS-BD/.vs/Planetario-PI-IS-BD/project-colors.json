@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "51d662ba-0565-42d2-b169-aac0535aa173": {
+      "ProjectGuid": "51d662ba-0565-42d2-b169-aac0535aa173",
+      "DisplayName": "Planetario-PI-IS-BD",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
