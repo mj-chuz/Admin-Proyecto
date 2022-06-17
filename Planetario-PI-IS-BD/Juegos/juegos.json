@@ -1,0 +1,58 @@
+{
+  "Juegos": [
+    {
+      "Nombre": "Crucigrama astronómico",
+      "Link": "https://es.educaplay.com/juego/10975597-terminos_astronomicos.html%22%3E",
+      "Imagen": "crucigrama.png",
+      "Tipo": "crucigrama"
+    },
+    {
+      "Nombre": "Crucigrama del Sistema Solar",
+      "Link": "https://es.educaplay.com/juego/11074590-sistema_solar.html",
+      "Imagen": "crucigrama.png",
+      "Tipo": "crucigrama"
+    },
+    {
+      "Nombre": "Crucigrama de astrónomos",
+      "Link": "https://es.educaplay.com/juego/11074589-astrologos.html",
+      "Imagen": "crucigrama.png",
+      "Tipo": "crucigrama"
+    },
+    {
+      "Nombre": "Memoria Sistema Solar",
+      "Link": "https://es.educaplay.com/juego/4675054-sistema_solar.html",
+      "Imagen": "memoria.jpg",
+      "Tipo": "memoria"
+    },
+    {
+      "Nombre": "Memoria de Cuerpos Celestes",
+      "Link": "https://es.educaplay.com/juego/11074757-cuerpos_celestes.html",
+      "Imagen": "memoria.jpg",
+      "Tipo": "memoria"
+    },
+    {
+      "Nombre": "Memoria de cohetes",
+      "Link": "https://es.educaplay.com/juego/11074800-memoria_de_la_via_lactea.html",
+      "Imagen": "memoria.jpg",
+      "Tipo": "memoria"
+    },
+    {
+      "Nombre": "Ruleta astronómica",
+      "Link": "https://es.educaplay.com/juego/10975780-ruleta_astronomica.html",
+      "Imagen": "ruleta.png",
+      "Tipo": "ruleta"
+    },
+    {
+      "Nombre": "Ruleta de cuerpos celestes",
+      "Link": "https://es.educaplay.com/juego/11074649-cuerpos_celestes.html",
+      "Imagen": "ruleta.png",
+      "Tipo": "ruleta"
+    },
+    {
+      "Nombre": "Ruleta de astronautas",
+      "Link": "https://es.educaplay.com/juego/11074651-ruleta_de_astronautas.html",
+      "Imagen": "ruleta.png",
+      "Tipo": "ruleta"
+    }
+  ]
+}
