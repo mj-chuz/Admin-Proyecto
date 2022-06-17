@@ -241,6 +241,7 @@
     <Compile Include="Handlers\EstadisticasHandler.cs" />
     <Compile Include="Handlers\FuncionariosHandler.cs" />
     <Compile Include="Handlers\ImagenHandler.cs" />
+    <Compile Include="Handlers\JuegosHandler.cs" />
     <Compile Include="Handlers\MaterialHandler.cs" />
     <Compile Include="Handlers\NoticiasHandler.cs" />
     <Compile Include="Handlers\PreguntaHandler.cs" />
@@ -259,6 +260,7 @@
     <Compile Include="Models\DatoReporteSatisfaccionModel.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />
     <Compile Include="Models\ImagenModel.cs" />
+    <Compile Include="Models\JuegoModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\MaterialModel.cs" />
     <Compile Include="Models\NoticiaModel.cs" />
@@ -444,6 +446,7 @@
     <Content Include="package.json" />
     <Content Include="JSON\Cantones.json" />
     <Content Include="JSON\Distritos.json" />
+    <Content Include="Juegos\juegos.json" />
     <None Include="Properties\PublishProfiles\PIArbo - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PlanetarioDAJAM - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PruebaProyectoPI - Web Deploy.pubxml" />

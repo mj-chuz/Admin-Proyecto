@@ -1,7 +1,7 @@
 {
   "Juegos": [
     {
-      "Nombre": "Crucigrama astronÃ³mico",
+      "Nombre": "Crucigrama astronómico",
       "Link": "https://es.educaplay.com/juego/10975597-terminos_astronomicos.html%22%3E",
       "Imagen": "crucigrama.png",
       "Tipo": "crucigrama"
@@ -13,7 +13,7 @@
       "Tipo": "crucigrama"
     },
     {
-      "Nombre": "Crucigrama de astrÃ³nomos",
+      "Nombre": "Crucigrama de astrónomos",
       "Link": "https://es.educaplay.com/juego/11074589-astrologos.html",
       "Imagen": "crucigrama.png",
       "Tipo": "crucigrama"
@@ -37,7 +37,7 @@
       "Tipo": "memoria"
     },
     {
-      "Nombre": "Ruleta astronÃ³mica",
+      "Nombre": "Ruleta astronómica",
       "Link": "https://es.educaplay.com/juego/10975780-ruleta_astronomica.html",
       "Imagen": "ruleta.png",
       "Tipo": "ruleta"
