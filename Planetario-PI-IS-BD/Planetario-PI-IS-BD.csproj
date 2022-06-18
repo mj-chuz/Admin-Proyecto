@@ -357,6 +357,9 @@
     <Content Include="imagenes\sadness.png" />
     <Content Include="imagenes\streamEjemplo.jpg" />
     <Content Include="imagenes\weco.jpg" />
+    <Content Include="Juegos\imagenes\crucigrama.png" />
+    <Content Include="Juegos\imagenes\memoria.png" />
+    <Content Include="Juegos\imagenes\ruleta.png" />
     <Content Include="Materiales\fotoAgujeroNegro.jpg" />
     <Content Include="Materiales\FotoEntregable.jpg" />
     <Content Include="Materiales\imagenAndromeda.jpg" />
