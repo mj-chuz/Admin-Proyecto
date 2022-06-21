@@ -217,6 +217,7 @@
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImagenController.cs" />
+    <Compile Include="Controllers\JuegosController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MaterialController.cs" />
     <Compile Include="Controllers\NoticiasController.cs" />

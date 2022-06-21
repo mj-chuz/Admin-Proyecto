@@ -12,7 +12,7 @@ namespace Planetario.Controllers {
     }
 
     public ActionResult PaginaPrincipal() {
-      ViewBag.ListaJuegos = AccesoMetodosJuegos.CargarListaJuegos();
+      ViewBag.ListaJuegos = AccesoMetodosJuegos.CargarListaJuegos("");
       return View();
     }
 
