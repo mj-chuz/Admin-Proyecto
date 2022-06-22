@@ -16,7 +16,6 @@ async function aplicarDescuento(numeroIdentificacion) {
             let descuento = datosPrecio["Descuento"]
             let resultado = datosPrecio["Resultado"]
             if (resultado == "exito") {
-                console.log(datosPrecio)
                 let campoDescuento = document.getElementById("descuento-aplicado")
                 document.getElementById("nombre-cupon").innerHTML = "Cupón";
                 campoDescuento.innerHTML = "₡" + datosPrecio["Descuento"];
