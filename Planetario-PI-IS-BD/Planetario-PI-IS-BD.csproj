@@ -414,6 +414,7 @@
     <Content Include="Noticias\Noticias\imagenes\20210906El-Fin-de-la-estacion-espacial-internacional.png" />
     <Content Include="Noticias\Noticias\imagenes\20210916Elon-Musk-Viajara-a.jpg" />
     <Content Include="Noticias\Noticias\imagenes\20210927La-NASA-lanza-el-nuevo.jpg" />
+    <Content Include="Scripts\AplicarDescuento.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
