@@ -57,6 +57,18 @@
                     </div>
                 </div>
             </div>
+            @if (ViewBag.TipoPago == "producto")
+            {
+                <div class="row mt-2">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="campo-ingreso-codigo" placeholder="Código de cupon">
+                        <button class="btn btn-primary m-0" type="button" id="boton-aplicar-cupon" data-request-url="@Url.Action("AplicarDescuento","Pago")" onclick="aplicarDescuento('@ViewBag.Visitante.NumeroIdentificacion')" style="border-radius:8px;">Aplicar cupón</button>
+                    </div>
+                </div>
+                <div class="row ms-2" id="errorCodigoDescuento">
+
+                </div>
+            }
         </div>
     </div>
     <div class="row mt-4">
@@ -108,7 +120,7 @@
                 </div>
             }
         </div>
-        
+
         <div class="col" style="margin-left:100px; margin-right:35px;">
             @using (Html.BeginForm("VentanaDePago", "Pago", FormMethod.Post, new { enctype = "multipart/form-data" }))
             {
@@ -162,7 +174,7 @@
                             </div>
                             <div class="col-3" style="margin-top: 30px; margin-left: 20px; margin-right: 20px;margin-bottom:20px">
                                 <label for="cvc" class="form-label">‎‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎ </label>
-                                <input type="text" class="form-control" id="cvc" name="cvc" placeholder="CVC" maxlength="3" size="3" required autofocus inputmode="numeric" pattern="[0-9]{3}"/>
+                                <input type="text" class="form-control" id="cvc" name="cvc" placeholder="CVC" maxlength="3" size="3" required autofocus inputmode="numeric" pattern="[0-9]{3}" />
                             </div>
                         </div>
                     </div>
@@ -248,4 +260,9 @@
     input.addEventListener('change', function (event) {
         event.target.setCustomValidity('');
     })
+</script>
+<script src="~/Scripts/AplicarDescuento.js"></script>
+<script>
+    let campoIngresoCodigo = document.getElementById("campo-ingreso-codigo");
+    $("espacios-descuentos").hide();
 </script>
