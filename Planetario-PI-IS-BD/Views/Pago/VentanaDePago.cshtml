@@ -32,6 +32,19 @@
                 <div class="card rounded-3" style="width:100%;">
                     <div class="card-body">
                         @ViewBag.ResumenCompra.GenerarResumen()
+                        @if (ViewBag.TipoPago == "producto")
+                        {
+                            <div id="espacios-descuentos">
+                                <hr />
+                                <div class="row">
+                                    <h6>Descuentos</h6>
+                                </div>
+                                <div class="row">
+                                    <div class="col" id="nombre-cupon"></div>
+                                    <div class="col" id="descuento-aplicado"></div>
+                                </div>
+                            </div>
+                        }
                         <hr />
                         <div class="row h5">
                             <div class="col">
