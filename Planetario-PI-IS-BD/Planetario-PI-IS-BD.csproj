@@ -723,6 +723,7 @@
     <Content Include="Views\PreguntaSatisfaccion\ReporteDeSatisfaccion.cshtml" />
     <Content Include="Views\Juegos\PaginaPrincipal.cshtml" />
     <Content Include="Views\Juegos\Juego.cshtml" />
+    <Content Include="Views\Juegos\TypingPlanetario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

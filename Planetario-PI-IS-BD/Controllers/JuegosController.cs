@@ -26,6 +26,11 @@ namespace Planetario.Controllers {
       ViewBag.LinkJuego = juegoEscogido.Link;
       return View();
     }
+
+
+    public ActionResult TypingPlanetario() {
+      return View();
+    }
   }
     
 }
