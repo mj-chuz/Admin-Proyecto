@@ -361,6 +361,7 @@
     <Content Include="Juegos\imagenes\crucigrama.png" />
     <Content Include="Juegos\imagenes\memoria.png" />
     <Content Include="Juegos\imagenes\ruleta.png" />
+    <Content Include="Juegos\imagenes\typing.png" />
     <Content Include="Materiales\fotoAgujeroNegro.jpg" />
     <Content Include="Materiales\FotoEntregable.jpg" />
     <Content Include="Materiales\imagenAndromeda.jpg" />
