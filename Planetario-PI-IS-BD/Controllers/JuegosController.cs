@@ -1,6 +1,8 @@
 using System;
 using System.Web.Mvc;
 using Planetario.Handlers;
+using Planetario.Models;
+using System.Collections.Generic;
 
 namespace Planetario.Controllers {
   public class JuegosController : Controller {
@@ -12,14 +14,16 @@ namespace Planetario.Controllers {
     }
 
     public ActionResult PaginaPrincipal() {
-      ViewBag.ListaJuegos = AccesoMetodosJuegos.CargarListaJuegos("");
       return View();
     }
 
 
-    public ActionResult Juego(String nombre, String linkAlJuego) {
-      ViewBag.NombreJuego = nombre;
-      ViewBag.LinkJuego = linkAlJuego;
+    public ActionResult Juego(String tipo) {
+      List<JuegoModel> listaJuegos = AccesoMetodosJuegos.CargarListaJuegos(tipo);
+      var aleatorizador = new Random();
+      JuegoModel juegoEscogido = listaJuegos[aleatorizador.Next(listaJuegos.Count)];
+      ViewBag.NombreJuego = juegoEscogido.Nombre;
+      ViewBag.LinkJuego = juegoEscogido.Link;
       return View();
     }
   }

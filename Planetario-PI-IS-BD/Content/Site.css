@@ -852,3 +852,20 @@ input[type=radio]:checked + label > img {
 .contenedor-preguntas-satisfaccion h3 {
     text-transform: none;
 }
+
+.contenedor-juego {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 66.6%;
+}
+
+.juego {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%
+}

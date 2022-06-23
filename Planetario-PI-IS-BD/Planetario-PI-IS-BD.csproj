@@ -721,6 +721,8 @@
     <Content Include="Views\ReporteCompra\ReporteCompraAvanzado.cshtml" />
     <Content Include="Views\PreguntaSatisfaccion\CuestionarioSatisfaccionCompra.cshtml" />
     <Content Include="Views\PreguntaSatisfaccion\ReporteDeSatisfaccion.cshtml" />
+    <Content Include="Views\Juegos\PaginaPrincipal.cshtml" />
+    <Content Include="Views\Juegos\Juego.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
