@@ -15,6 +15,7 @@ namespace Planetario.Controllers {
     public ActividadHandler AccesoDatosActividad;
     public ProductoHandler AccesoAProductos;
     public CompraProductosHandler AccesoACompras;
+    public CuponHandler AccesoACupones;
     private const double IVA = 1.13;
 
     public PagoController() {
@@ -22,6 +23,7 @@ namespace Planetario.Controllers {
       AccesoDatosActividad = new ActividadHandler();
       AccesoAProductos = new ProductoHandler();
       AccesoACompras = new CompraProductosHandler();
+      AccesoACupones = new CuponHandler();
     }
 
     public ActionResult PagoActividad(String identificacionVisitante, String nombreActividad, String fechaActividad, int cantidadCupos, String mensajeError = "") {
@@ -139,6 +141,17 @@ namespace Planetario.Controllers {
       if (Session["carrito"] == null) Session["carrito"] = new CarritoModel();
       ViewBag.Carrito = (CarritoModel)Session["carrito"];
       return View();
+    }
+    public JsonResult AplicarDescuento(String codigoCupon, String numeroIdentificacion) {
+      CuponModel cuponAplicado = AccesoACupones.ObtenerCupon(codigoCupon);
+      ResumenCompraProductosModel resumenCompra = (ResumenCompraProductosModel)Session["resumenDeCompra"];
+      bool visitanteUsoCupon = AccesoACupones.VisitanteUsoCupon(codigoCupon, numeroIdentificacion);
+      bool esCuponAplicable = AccesoACupones.EsCuponAplicable(codigoCupon, numeroIdentificacion);
+      bool esCuponSobreUsado = visitanteUsoCupon && !esCuponAplicable;
+      if (!esCuponSobreUsado)
+        resumenCompra.AplicarCupon(cuponAplicado);
+      Session["resumenDeCompra"] = resumenCompra;
+      return Json(resumenCompra.ObtenerDatosPrecioDescuento(esCuponSobreUsado));
     }
   }
 }

@@ -7,9 +7,10 @@ using System.Data;
 namespace Planetario.Handlers {
   public class CompraProductosHandler : BaseDeDatosHandler {
 
+    private CuponHandler _accesoMetodosCupon;
 
     public CompraProductosHandler() {
-
+      _accesoMetodosCupon = new CuponHandler(ConexionPlanetario);
     }
 
     public void ActualizarTablasCompra(ResumenCompraProductosModel resumenDeCompra, String numeroIdentificacionComprador) {
@@ -17,6 +18,7 @@ namespace Planetario.Handlers {
       SqlTransaction transaccion = ConexionPlanetario.BeginTransaction(IsolationLevel.RepeatableRead);
       try {
         ActualizarTablaProductos(resumenDeCompra, transaccion);
+        _accesoMetodosCupon.UsarCuponCompra(resumenDeCompra.CodigoCupon, numeroIdentificacionComprador, transaccion);
         CrearFactura(resumenDeCompra, numeroIdentificacionComprador, transaccion);
         transaccion.Commit();
         ConexionPlanetario.Close();
@@ -56,8 +58,8 @@ namespace Planetario.Handlers {
 
     private void CrearFactura(ResumenCompraProductosModel resumenDeCompra, String numeroIdentificacionComprador, SqlTransaction transaccion = null) {
       DateTime fechaDeCompra = DateTime.Now;
-      String consulta = "INSERT INTO Factura(fechaCompraPK,numeroIdentificacionVisitanteFK, subTotal, impuesto, total) " +
-        "VALUES(@fechaDeCompra, @numeroIdentificacionComprador, @subTotal, @impuesto, @total)";
+      String consulta = "INSERT INTO Factura(fechaCompraPK,numeroIdentificacionVisitanteFK, subTotal, impuesto, total, cuponAplicadoFK) " +
+        "VALUES(@fechaDeCompra, @numeroIdentificacionComprador, @subTotal, @impuesto, @total, @cupon)";
       SqlCommand comandoParaConsulta;
       bool switchear = ConexionPlanetario.State == ConnectionState.Closed;
       if (transaccion == null) {
@@ -70,6 +72,7 @@ namespace Planetario.Handlers {
       comandoParaConsulta.Parameters.AddWithValue("@subTotal", resumenDeCompra.SubTotal);
       comandoParaConsulta.Parameters.AddWithValue("@impuesto", resumenDeCompra.Impuestos);
       comandoParaConsulta.Parameters.AddWithValue("@total", resumenDeCompra.PrecioTotal);
+      comandoParaConsulta.Parameters.AddWithValue("@cupon", resumenDeCompra.CodigoCupon);
       if (switchear) ConexionPlanetario.Open();
       comandoParaConsulta.ExecuteNonQuery();
       if (switchear) ConexionPlanetario.Close();
