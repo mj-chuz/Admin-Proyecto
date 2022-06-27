@@ -31,6 +31,10 @@ namespace Planetario.Controllers {
     public ActionResult TypingPlanetario() {
       return View();
     }
+
+    public ActionResult JuegoMemoria() {
+      return View();
+    }
   }
     
 }

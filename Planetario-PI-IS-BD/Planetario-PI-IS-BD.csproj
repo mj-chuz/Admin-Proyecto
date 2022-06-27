@@ -303,6 +303,7 @@
     <Content Include="Content\jssocials-theme-minima.css" />
     <Content Include="Content\jssocials-theme-plain.css" />
     <Content Include="Content\jssocials.css" />
+    <Content Include="Content\juegoMemoria.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -361,6 +362,13 @@
     <Content Include="imagenes\streamEjemplo.jpg" />
     <Content Include="imagenes\weco.jpg" />
     <Content Include="Juegos\imagenes\crucigrama.png" />
+    <Content Include="Juegos\imagenes\juegoMemoria\Albert.png" />
+    <Content Include="Juegos\imagenes\juegoMemoria\backface.jpg" />
+    <Content Include="Juegos\imagenes\juegoMemoria\Edison.png" />
+    <Content Include="Juegos\imagenes\juegoMemoria\Marie.jpg" />
+    <Content Include="Juegos\imagenes\juegoMemoria\Nicolas.jpg" />
+    <Content Include="Juegos\imagenes\juegoMemoria\Rene.png" />
+    <Content Include="Juegos\imagenes\juegoMemoria\Tesla.png" />
     <Content Include="Juegos\imagenes\memoria.png" />
     <Content Include="Juegos\imagenes\ruleta.png" />
     <Content Include="Juegos\imagenes\typing.png" />
@@ -484,6 +492,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\juegoMemoria.js" />
     <Content Include="Scripts\low\ariel.jpg" />
     <Content Include="Scripts\low\callisto.jpg" />
     <Content Include="Scripts\low\ceres.jpg" />
@@ -727,6 +736,7 @@
     <Content Include="Views\Juegos\PaginaPrincipal.cshtml" />
     <Content Include="Views\Juegos\Juego.cshtml" />
     <Content Include="Views\Juegos\TypingPlanetario.cshtml" />
+    <Content Include="Views\Juegos\JuegoMemoria.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
