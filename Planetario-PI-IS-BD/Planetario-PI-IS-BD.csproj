@@ -239,6 +239,7 @@
     <Compile Include="Handlers\CategoriaHandler.cs" />
     <Compile Include="Handlers\CorreoHandler.cs" />
     <Compile Include="Handlers\CuestionariosHandler.cs" />
+    <Compile Include="Handlers\CuponHandler.cs" />
     <Compile Include="Handlers\EstadisticasHandler.cs" />
     <Compile Include="Handlers\FuncionariosHandler.cs" />
     <Compile Include="Handlers\ImagenHandler.cs" />
@@ -257,6 +258,7 @@
     <Compile Include="Models\BuscadorPreguntasModel.cs" />
     <Compile Include="Models\CarritoModel.cs" />
     <Compile Include="Models\CategoriaModel.cs" />
+    <Compile Include="Models\CuponModel.cs" />
     <Compile Include="Models\CuestionarioModel.cs" />
     <Compile Include="Models\DatoReporteSatisfaccionModel.cs" />
     <Compile Include="Models\FuncionarioModel.cs" />

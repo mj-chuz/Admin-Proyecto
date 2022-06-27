@@ -12,14 +12,21 @@ namespace Planetario.Models {
     public double PrecioTotal { get; set; }
     public double SubTotal { get; set; }
     public double Impuestos { get; set; }
+    public double Descuento { get; set; }
+    public bool CuponAplicado { get; set; }
 
+    public String CodigoCupon { get; set; } = "0";
 
     public ResumenCompraProductosModel() {
+      CuponAplicado = false;
+      CodigoCupon = "0";
     }
 
     public ResumenCompraProductosModel(CarritoModel productosComprados, double precioTotal) {
       this.Carrito = productosComprados;
       this.PrecioTotal = precioTotal;
+      CuponAplicado = false;
+      CodigoCupon = "0";
     }
 
 
@@ -55,6 +62,27 @@ namespace Planetario.Models {
 
     public override string SerializarAJson() {
       return JsonConvert.SerializeObject(this, Formatting.Indented);
+    }
+
+    public void AplicarCupon(CuponModel cupon) {
+      if (!CuponAplicado && cupon.Codigo != "0") {
+        Descuento = SubTotal * cupon.DescuentoRelativo;
+        SubTotal = SubTotal * (1 - cupon.DescuentoRelativo);
+        PrecioTotal = SubTotal * IVA;
+        Impuestos = PrecioTotal - SubTotal;
+        CuponAplicado = true;
+        CodigoCupon = cupon.Codigo;
+      }
+    }
+
+    public String ObtenerDatosPrecioDescuento(bool usosMaximosPasados) {
+      String resultado = "exito";
+      if (usosMaximosPasados)
+        resultado = "sobreusado";
+      else if (!CuponAplicado)
+        resultado = "invalido";
+      String datos = "[{\"Resultado\":\"" + resultado + "\", \"PrecioTotal\":\"" + PrecioTotal.ToString() + "\" , \"Descuento\":\"" + Descuento.ToString() + "\"}]";
+      return datos;
     }
 
   }
