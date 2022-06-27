@@ -10,9 +10,37 @@
             <textarea id="userEntryContainer" class="w-100" onkeyup="checkChar()"></textarea>
             <br /><br />
             <button class="btn btn-info" onclick="changeText()">Cambiar de Misión</button>
+            <input id="botonModal" type="button" style="display:none;" data-bs-toggle="modal" data-target="#exampleModal" data-bs-target="#exampleModal" />
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" style="color:white" id="exampleModalLongTitle"><i class="fas fa-puzzle-piece"></i> Juego Finalizado</h5>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header">
+                        Acabas de completar la mision
+                    </div>
+                    <div class="card-body">
+                        <p id="timeSpan"></p>
+                        <hr />
+                        <p id="mistakesSpan"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer text-center" style="display:initial">
+                <button class="btn btn-info" onclick="document.getElementById('botonModal').click();">Seguir Jugando</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <script src="~/Juegos/Typing.js"></script>
 <script>
@@ -24,6 +52,7 @@
         let progress = typing.checkChar();
         console.log(progress);
         if (progress == 100) {
+            document.getElementById('botonModal').click();
             document.querySelector("#timeSpan").textContent = "Tiempo: " + typing.getStats()[1];
             document.querySelector("#mistakesSpan").textContent = "La nave tuvo un " + typing.getStats()[0] + "% de daño";
 
