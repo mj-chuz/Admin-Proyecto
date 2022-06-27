@@ -2,8 +2,36 @@
     <h1>Typing Planetario</h1>
     <hr />
     <div class="card">
-        <div class="card-body contenedor-juego">
-            
+        <div class="card-body">
+            <p id="textContainer"></p>
+            <hr />
+            <div id="status" class="rounded-3"></div>
+            <input type="range" name="name" class="form-range" id="progressBar" min="0" max="100" value="0" />
+            <textarea id="userEntryContainer" class="w-100" onkeyup="checkChar()"></textarea>
+            <br /><br />
+            <button class="btn btn-info" onclick="changeText()">Cambiar de Misión</button>
         </div>
     </div>
 </div>
+
+<script src="~/Juegos/Typing.js"></script>
+<script>
+    let inputIds = ["#textContainer", "#userEntryContainer", "#status"];
+    let typing = new Typing(inputIds);
+    document.querySelector("#progressBar").value = "0";
+
+    function checkChar() {
+        let progress = typing.checkChar();
+        console.log(progress);
+        if (progress == 100) {
+            document.querySelector("#timeSpan").textContent = "Tiempo: " + typing.getStats()[1];
+            document.querySelector("#mistakesSpan").textContent = "La nave tuvo un " + typing.getStats()[0] + "% de daño";
+
+        }
+        document.querySelector("#progressBar").value = progress;
+    }
+
+    function changeText() {
+        typing.changeText();
+    }
+</script>

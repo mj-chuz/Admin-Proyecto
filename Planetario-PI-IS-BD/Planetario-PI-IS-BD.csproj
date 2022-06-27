@@ -742,6 +742,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Juegos\Typing.js" />
     <TypeScriptCompile Include="node_modules\chart.js\auto\auto.esm.d.ts" />
     <TypeScriptCompile Include="node_modules\chart.js\helpers\helpers.esm.d.ts" />
     <TypeScriptCompile Include="node_modules\chart.js\types\adapters.d.ts" />
