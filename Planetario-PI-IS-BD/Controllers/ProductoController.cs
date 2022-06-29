@@ -16,6 +16,11 @@ namespace Planetario.Controllers {
       return View();
     }
 
+    public JsonResult ObtenerProductoIndividual(String identificadorProducto) {
+      String producto = _accesoADatosProducto.ObtenerProducto(identificadorProducto);
+      return Json(producto);
+    }
+
     public JsonResult ObtenerProductos(String categoria = "", String columnaOrdenamiento = "", String direccionOrdenamiento = "", int pagina = 0, String busqueda = "") {
       String productos = _accesoADatosProducto.ObtenerProductos(categoria, columnaOrdenamiento, direccionOrdenamiento, pagina, busqueda);
       return Json(productos);
