@@ -36,5 +36,21 @@ namespace Planetario.Controllers
       Session["carrito"] = carrito;
       return RedirectToAction("Catalogo", "Producto");
     }
+
+    public ActionResult EliminarProducto(String idItem)
+    {
+      ProductoHandler accesoAProductos = new ProductoHandler();
+      ProductoModel productoAgregado = accesoAProductos.ObtenerProductoModel(idItem);
+      CarritoModel carrito;
+      if (Session["carrito"] == null){
+        carrito = new CarritoModel();
+      }
+      else carrito = (CarritoModel)Session["carrito"];
+
+      int cantidadProducto = carrito.EliminarProducto(productoAgregado.IdentificadorProducto);
+      Session["cantidadProductosCarrito"] = (int)Session["cantidadProductosCarrito"] - cantidadProducto;
+      Session["carrito"] = carrito;
+      return RedirectToAction("MostrarCarritoCompras", "Pago");
+    }
   }
 }
