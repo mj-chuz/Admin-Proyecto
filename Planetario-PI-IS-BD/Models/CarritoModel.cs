@@ -25,6 +25,13 @@ namespace Planetario.Models {
       } else ProductosEnCarrito.Add(producto, cantidad);
     }
 
+    public int EliminarProducto(String producto)
+    {
+      int cantidadProducto = ProductosEnCarrito[producto];
+      ProductosEnCarrito.Remove(producto);
+      return cantidadProducto;
+    }
+
     public double CalcularSubtotal() {
       Double subtotal = 0;
       ProductoHandler productoHandler = new ProductoHandler();
