@@ -82,8 +82,48 @@
         </nav>
     </div>
 
+    <div id="producto-individual" class="container justify-content-center" style="margin-top: 40px">
+        <div id="productoControllerIndividual" data-request-url="@Url.Action("ObtenerProductoIndividual", "Producto")"></div>
+        <div id="contenedorProductoIndividual">
+            <div class="row" style="height:80%">
+                <div class="col">
+                    <div class="card text-center border-light mb-3 shadow p-3 mb-5 bg-white rounded" style="border-radius: 15px">
+                        <div class="card-body">
+                            <img class="img-fluid" id="imagen-producto-individual" src="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card border-light mb-3 p-3 mb-5 bg-white rounded" style="border-radius: 15px; height:100%">
+                        <div class="card-body">
+                            <div class="col">
+                                <div class="row" style="margin-top:10%; margin-bottom:10%">
+                                    <h1 id="nombre-producto-individual"></h1>
+                                </div>
+                                <div class="row" style="margin-bottom:10%">
+                                    <h1 id="precio-producto-individual"></h1>
+                                </div>
+                                <div class="row" style="margin-bottom:10%">
+                                    <p id="descripcion-producto-individual"></p>
+                                </div>
+                                <div class="row-sm">
+                                    <label for="cuposComprados" class="row-form-label h3 mb-0">Cantidad:</label>
+                                    <br />
+                                    <input type="number" class="form-control" id="productos-comprados" name="productosComprados" min="0" max="" style="width:18%" onkeyup="revisarUnidades()" onmouseup="revisarUnidades()" />
+                                    <p id="unidades-disponibles-aviso" style="margin-top: 8px"></p>
 
-    
+                                </div>
+                                <hr />
+
+                                <button type="button" class="btn btn-primary" id="boton-carrito-producto-individual" style="width:100%">Añadir al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 <script src="~/Scripts/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="~/Scripts/CargadorProductos.js"></script>
