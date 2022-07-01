@@ -58,6 +58,7 @@ async function obtenerProductos2(categoria, columnaOrdenamiento, direccionOrdena
                 let imagenProducto = document.createElement("img");
                 imagenProducto.classList.add(...["card-img-top", "imagen-producto"]);
                 imagenProducto.src = "/imagenes/productos/" + producto.NombreFoto;
+                imagenProducto.onclick = function () { obtenerProductoIndividual(producto.IdentificadorProducto) }
                 let nombreProducto = document.createElement("h5");
                 nombreProducto.classList.add(...["card-title","titulo-producto"]);
                 nombreProducto.innerHTML = producto.Nombre;
@@ -91,6 +92,41 @@ async function obtenerProductos2(categoria, columnaOrdenamiento, direccionOrdena
     });
 }
 
+
+async function obtenerProductoIndividual(idProducto) {
+    $("#producto-individual").show();
+    $("#contenedor-catalogo").hide();
+    $("#contenedor-baner-catalogo").hide();
+    await $.ajax({
+
+        type: 'POST',
+        url: $("#productoControllerIndividual").data("request-url"),
+        dataType: 'json',
+
+        data: { identificadorProducto: idProducto },
+
+        success: function (producto) {
+            producto = JSON.parse(producto)[0];
+            console.log(producto);
+            $("#imagen-producto-individual").attr("src", "/imagenes/productos/" + producto.nombreArchivoImagen);
+            $("#nombre-producto-individual").html(producto.nombre);
+            $("#precio-producto-individual").html("₡" + producto.precio);
+            $("#descripcion-producto-individual").html(producto.descripcion);
+            $("#productos-comprados").val(1);
+            $("#productos-comprados").attr({ "min": 1 });
+            $("#productos-comprados").attr({ "max": producto.unidadesDisponibles });
+            $("#boton-carrito-producto-individual").off();
+            $("#boton-carrito-producto-individual").click(function (e) {
+                fetch('/Carrito/AgregarProducto?idItem=' + producto.idProductoPK + '&cantidad=' + $("#productos-comprados").val());
+            });
+        },
+
+        error: function (excepcion) {
+            alert('Algo salió mal, vuelve pronto :(' + excepcion);
+        }
+
+    });
+}
 
 function crearFila() {
     let fila = document.createElement("div");
