@@ -68,6 +68,8 @@ async function obtenerProductos2(categoria, columnaOrdenamiento, direccionOrdena
                 let botonComprar = document.createElement("button");
                 botonComprar.classList.add(...["btn", "btn-primary", "boton-comprar-producto"]);
                 botonComprar.textContent = "Añadir al carrito";
+                //botonComprar.setAttribute("data-bs-toggle", "modal");
+                //botonComprar.setAttribute("data-bs-target", "exampleModal");
                 botonComprar.onclick = function (e) {
                     fetch('/Carrito/AgregarProducto?idItem=' + producto.IdentificadorProducto);
                 };
