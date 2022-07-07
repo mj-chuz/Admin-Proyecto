@@ -12,10 +12,16 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <p>Descripción</p>
+                    <p>Producto</p>
                 </div>
                 <div class="col-2">
-                    <p style="float:right">Precio</p>
+                    <p style="float:right">Cantidad</p>
+                </div>
+                <div class="col-2">
+                    <p style="float:right">Precio por unidad</p>
+                </div>
+                <div class="col-2">
+                    <p style="float:right">Precio total</p>
                 </div>
             </div>
             @foreach (var elementoCarrito in ViewBag.Carrito.ObtenerCarritoConModelos())
@@ -42,10 +48,15 @@
                         </div>
                     </div>
 
+
+                    <div class="col-2">
+                        <p style="float:right">@cantidad</p>
+                    </div>
+                    <div class="col-2">
+                        <p style="float:right">₡@producto.Precio</p>
+                    </div>
                     <div class="col-2">
                         <p style="float:right">₡@totalProducto</p>
-
-
                     </div>
 
 
