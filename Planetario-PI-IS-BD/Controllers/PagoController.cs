@@ -50,6 +50,7 @@ namespace Planetario.Controllers {
         ViewBag.Visitante = AccesoMetodosVisitante.RecuperarVisitante(identificacionVisitante);
         ViewBag.ResumenCompra = resumenCompra;
         ViewBag.TipoPago = tipoPago;
+        ViewBag.IdentificacionVisitante = identificacionVisitante;
         Session["resumenDeCompra"] = resumenCompra;
         if (mensajeError != "") ViewBag.Message = mensajeError;
         return View("VentanaDePago");
@@ -148,10 +149,12 @@ namespace Planetario.Controllers {
       bool visitanteUsoCupon = AccesoACupones.VisitanteUsoCupon(codigoCupon, numeroIdentificacion);
       bool esCuponAplicable = AccesoACupones.EsCuponAplicable(codigoCupon, numeroIdentificacion);
       bool esCuponSobreUsado = visitanteUsoCupon && !esCuponAplicable;
-      if (!esCuponSobreUsado)
+      if (!esCuponSobreUsado) {
         resumenCompra.AplicarCupon(cuponAplicado);
+      }
+        
       Session["resumenDeCompra"] = resumenCompra;
-      return Json(resumenCompra.ObtenerDatosPrecioDescuento(esCuponSobreUsado));
+      return Json(resumenCompra.ObtenerDatosPrecioDescuento(esCuponSobreUsado), JsonRequestBehavior.AllowGet);
     }
   }
 }

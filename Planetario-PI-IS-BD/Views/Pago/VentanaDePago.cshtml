@@ -62,7 +62,7 @@
                 <div class="row mt-2">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" id="campo-ingreso-codigo" placeholder="Código de cupon">
-                        <button class="btn btn-primary m-0" type="button" id="boton-aplicar-cupon" data-request-url="@Url.Action("AplicarDescuento","Pago")" onclick="aplicarDescuento('@ViewBag.Visitante.NumeroIdentificacion')" style="border-radius:8px;">Aplicar cupón</button>
+                        <button class="btn btn-primary m-0" type="button" id="boton-aplicar-cupon" data-request-url="@Url.Action("AplicarDescuento","Pago")" onclick="aplicarDescuento('@ViewBag.IdentificacionVisitante')" style="border-radius:8px;">Aplicar cupón</button>
                     </div>
                 </div>
                 <div class="row ms-2" id="errorCodigoDescuento">

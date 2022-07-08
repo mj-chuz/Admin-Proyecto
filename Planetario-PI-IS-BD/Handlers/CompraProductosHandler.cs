@@ -10,7 +10,7 @@ namespace Planetario.Handlers {
     private CuponHandler _accesoMetodosCupon;
 
     public CompraProductosHandler() {
-      _accesoMetodosCupon = new CuponHandler(ConexionPlanetario);
+      _accesoMetodosCupon = new CuponHandler();
     }
 
     public void ActualizarTablasCompra(ResumenCompraProductosModel resumenDeCompra, String numeroIdentificacionComprador) {

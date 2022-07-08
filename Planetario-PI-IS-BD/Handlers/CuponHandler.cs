@@ -2,18 +2,9 @@
 using System.Data.SqlClient;
 using Planetario.Models;
 using System.Data;
-using System.Configuration;
 
 namespace Planetario.Handlers {
   public class CuponHandler : BaseDeDatosHandler {
-
-    public CuponHandler() {
-      String RutaConexionActividad = ConfigurationManager.ConnectionStrings["PlanetarioConnection"].ToString();
-      ConexionPlanetario = new SqlConnection(RutaConexionActividad);
-    }
-    public CuponHandler(SqlConnection conexion) {
-      this.ConexionPlanetario = conexion;
-    }
 
     public CuponModel ObtenerCupon(String codigoCupon) {
       String consulta = "SELECT * FROM Cupon WHERE codigoCuponPK = @codigoCupon";
