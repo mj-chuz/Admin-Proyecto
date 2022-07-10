@@ -34,6 +34,7 @@ namespace Planetario.Controllers
       else carrito = (CarritoModel)Session["carrito"];
       carrito.AgregarProducto(productoAgregado.IdentificadorProducto, cantidad);
       Session["carrito"] = carrito;
+      Session["cantidadProductosCarrito"] = (int)Session["cantidadProductosCarrito"] + cantidad;
       return RedirectToAction("Catalogo", "Producto");
     }
 

@@ -53,7 +53,7 @@ namespace Planetario.Models {
         "{0}" +
         "</div>" +
         "<div class=\"col\">" +
-        "₡{1}" +
+        "{1}" +
         "</div>" +
         "<div class=\"col\">" +
         "₡{2}" +
