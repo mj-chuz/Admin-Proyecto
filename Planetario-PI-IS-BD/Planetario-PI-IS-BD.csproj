@@ -370,6 +370,7 @@
     <Content Include="Juegos\imagenes\juegoMemoria\Rene.png" />
     <Content Include="Juegos\imagenes\juegoMemoria\Tesla.png" />
     <Content Include="Juegos\imagenes\memoria.png" />
+    <Content Include="Juegos\imagenes\memoriaCientificos.png" />
     <Content Include="Juegos\imagenes\ruleta.png" />
     <Content Include="Juegos\imagenes\typing.png" />
     <Content Include="Materiales\fotoAgujeroNegro.jpg" />
@@ -463,6 +464,7 @@
     <Content Include="JSON\Cantones.json" />
     <Content Include="JSON\Distritos.json" />
     <Content Include="Juegos\juegos.json" />
+    <Content Include="JSON\cientificos.json" />
     <None Include="Properties\PublishProfiles\PIArbo - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PlanetarioDAJAM - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PruebaProyectoPI - Web Deploy.pubxml" />

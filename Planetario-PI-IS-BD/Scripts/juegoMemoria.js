@@ -7,8 +7,8 @@ let firstCard, secondCard;
 let matchingPairs = 0;
 let showInstructions = true;
 
-window.onload = function () {
-    document.getElementById("instructionsModal").click();
+window.onload =  () => {
+    showModal("#instructionsModalLong");
 }
 
 function flipCard() {
@@ -30,6 +30,7 @@ function flipCard() {
 
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    let id = firstCard.dataset.framework.toString();
 
     if (isMatch) {
         disableCards();
@@ -73,13 +74,41 @@ function resetBoard() {
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 function closeModal(id) {
-    document.getElementById(id).click();
+    $(id).modal('hide');
 }
 
-function changeCardModal() {
+function showModal(id) {
+    $(id).modal('show');
+}
+
+function changeCardModal(id) {
+    let scientist = getScientistById(id);
+
+    document.getElementById("cardModalScientistName").innerHTML = scientist[0];
+    document.getElementById("scientistInformation").innerHTML = scientist[1];
+    document.getElementById("scientistImage").setAttribute("src", "../Juegos/imagenes/JuegoMemoria/" + scientist[2]);
+
     if (matchingPairs == TOTAL_PAIRS) {
-        document.getElementById("cardModalButton").click();
-    } 
+        document.getElementById("cardModalTitle").innerHTML = "&iexcl;Encontraste la &uacute;ltima pareja! Has ganado";
+        hide("continueButton");
+        show("exitButton");
+        show("playAgainButton");
+    } else {
+        show("continueButton");
+        hide("exitButton");
+        hide("playAgainButton");
+    }
+
+    showModal("#cardModal");
+}
+
+function getScientistById(id) {
+    for (let key in scientists) {
+        if (key == id) {
+            return scientists[key];
+        }
+    }
+    return null;
 }
 
 function playAgain() {

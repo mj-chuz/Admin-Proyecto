@@ -64,23 +64,18 @@
         </div>
     </section>
 
-    <input type="button" class="d-none" id="instructionsModal" data-toggle="modal" data-target="#instructionsModalLong" />
-
     <div class="modal fade" id="instructionsModalLong" tabindex="-1" aria-labelledby="instructionsModalLongLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content" style="padding: 0;margin: 0;">
-                <div class="modal-header" style="background-color:#3498db;border-color: #3498db;">
+                <div class="modal-heade text-center p-3" style="background-color:#3498db;border-color: #3498db;">
                     <h5 class="modal-title" style="color:white" id="instructionsModalLongTitle"><i class="fas fa-puzzle-piece"></i> Instrucciones del juego</h5>
-                    <button type="button" class="close btn btn-danger" data-dismiss="modal" id="closeInstructionsModal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
                 </div>
                 <div class="modal-body">
                     El juego de memoria se basa en lograr memorizar la ubicación de las diferentes cartas con el fin de voltear sucesivamente las 2 cartas idénticas que formen pareja. La partida se terminará cuando estén todas las parejas encontradas.
                 </div>
                 <div class="modal-footer text-center" style="display:initial">
-                    <button type="button" class="btn btn-secondary w-25" data-dismiss="modal" onclick="closeModal('closeInstructionsModal')">
-                        <i class="fas fa-gamepad"></i>   Jugar
+                    <button type="button" class="btn btn-success w-auto" data-dismiss="modal" onclick="closeModal('#instructionsModalLong')">
+                        <i class="fas fa-gamepad m-1"></i>   Jugar
                     </button>
                 </div>
             </div>
@@ -89,23 +84,37 @@
 
     <input type="button" id="cardModalButton" data-toggle="modal" data-target="#cardModal" class="d-none" />
 
-    <div class="modal-dialog modal-dialog-centered ">
-        <div class="modal fade" role="document" id="cardModal" tabindex="-1" aria-labelledby="cardModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal fade" id="cardModal" role="document"  tabindex="-1" aria-labelledby="cardModalTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content" style="padding: 0;margin: 0;">
                     <div class="modal-body">
                         <div class="row">
                             <div class="row">
                                 <div class="col text-center" style="margin: 20px 5px 20px 5px;">
-                                    <h3 class="modal-title m-3" id="cardModalTitle" style="">¡Encontraste la última pareja! ¡Has ganado!</h3>
+                                    <h3 class="modal-title m-3" id="cardModalTitle" style="">¡Has formado una pareja!</h3>
+                                    <h4 class="modal-title m-3" id="cardModalScientistName"></h4>
+                                    <img id="scientistImage" style="width: 20rem; height: 20rem;" alt="Responsive image" />
                                 </div>
                             </div>
-                            <div class="col-6 text-end">
-                                @Html.ActionLink("Salir", "PaginaPrincipal", new { }, new { @class = "btn btn-secondary w-50", @id = "finalButton" })
-                                <input id="exitButton" type="button" class="btn btn-secondary btn-block w-50" value="Salir" onclick="exit()" />
+                            <div class="row">
+                                <div class="col">
+                                    <p id="scientistInformation"></p>
+                                </div>
                             </div>
-                            <div class="col-6 text-start">
-                                <input id="playAgainButton" type="button" class="btn btn-info btn-block w-50" value="Jugar de nuevo" onclick="playAgain()" />
+                            <div class="row">
+                                <div class="col-12 text-center mt-2">
+                                    <button id="continueButton" type="button" class="btn btn-info w-50" style="display: initial;" onclick="closeModal('#cardModal')">Continuar</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 text-end">
+                                    @Html.ActionLink("Salir", "PaginaPrincipal", new { }, new { @class = "btn btn-secondary w-50", @id = "finalButton" })
+                                    <input id="exitButton" type="button" class="btn btn-secondary btn-block w-50" value="Salir" onclick="exit()" style="display: none;"/>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <input id="playAgainButton" type="button" class="btn btn-info btn-block w-50" value="Jugar de nuevo" onclick="playAgain()"  style="display: none;"/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -117,6 +126,8 @@
     <script src="~/Scripts/juegoMemoria.js"></script>
 
     <script>
+        let scientists = @Html.Raw(Json.Encode(@ViewBag.Scientists));
+
         document.getElementById("finalButton").setAttribute("style", "display:none;");
     </script>
 </body>
