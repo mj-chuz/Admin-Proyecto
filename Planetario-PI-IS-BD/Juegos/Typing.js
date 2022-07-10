@@ -10,7 +10,12 @@
         this.textOptions = [
             "Marte es el cuarto planeta en orden de distancia al Sol y el segundo más pequeño del sistema solar, después de Mercurio. Recibió su nombre en homenaje al dios de la guerra de la mitología romana, y también es conocido como el planeta rojo​ debido a la apariencia rojiza​ que le confiere el óxido de hierro predominante en su superficie.",
             "Un asteroide es un cuerpo celeste rocoso, más pequeño que un planeta y mayor que un meteoroide. La mayoría orbita entre Marte y Júpiter, en la región del sistema solar conocida como cinturón de asteroides.",
-            "La astronomía es la ciencia natural que estudia los cuerpos celestes del universo, incluidos las estrellas, los planetas, sus satélites naturales, los asteroides, cometas y meteoroides, la materia interestelar, las nebulosas, la materia oscura, las galaxias y demás."
+            "La astronomía es la ciencia natural que estudia los cuerpos celestes del universo, incluidos las estrellas, los planetas, sus satélites naturales, los asteroides, cometas y meteoroides, la materia interestelar, las nebulosas, la materia oscura, las galaxias y demás.",
+            "Venus es el segundo planeta del sistema solar en orden de proximidad al Sol y el tercero en cuanto a tamaño en orden ascendente después de Mercurio y Marte. Al igual que Mercurio, carece de satélites naturales. Recibe su nombre en honor a Venus, la diosa romana del amor.",
+            "Isaac Newton fue un físico, teólogo, inventor, alquimista y matemático inglés. Es autor de los Philosophiae naturalis principia mathematica, más conocidos como los Principia, donde describe la ley de la gravitación universal y estableció las bases de la mecánica clásica mediante las leyes que llevan su nombre.",
+            "Saturno es el sexto planeta del sistema solar contando desde el Sol, el segundo en tamaño y masa después de Júpiter y el único con un sistema de anillos visible desde la Tierra. Su nombre proviene del dios romano Saturno.",
+            "Se denomina telescopio al instrumento óptico que permite observar objetos lejanos con mucho más detalle que a simple vista al captar radiación electromagnética, tal como la luz. Es un utensilio fundamental en astronomía."
+
         ]
         this.changeText();
         this.seconds = 0;
