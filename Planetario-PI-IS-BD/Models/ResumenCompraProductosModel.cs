@@ -37,6 +37,9 @@ namespace Planetario.Models {
         "<h5>Nombre<h5>" +
         "</div>" +
         "<div class=\"col\">" +
+        "<h5>Cantidad<h5>" +
+        "</div>" +
+        "<div class=\"col\">" +
         "<h5>Total</h5>" +
         "</div>" +
         "</div>";
@@ -52,8 +55,11 @@ namespace Planetario.Models {
         "<div class=\"col\">" +
         "₡{1}" +
         "</div>" +
+        "<div class=\"col\">" +
+        "₡{2}" +
+        "</div>" +
         "</div>";
-        resumenProducto = String.Format(resumenProducto, producto.Nombre, producto.Precio*cantidad);
+        resumenProducto = String.Format(resumenProducto, producto.Nombre, cantidad, producto.Precio*cantidad);
         resumen += resumenProducto;
       }
       IHtmlString resumenConvertido = new HtmlString(resumen);
