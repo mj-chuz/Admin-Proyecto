@@ -41,5 +41,18 @@ namespace Planetario_PI_IS_BD.Tests.PruebasUnitarias{
       Assert.IsFalse(carrito.ProductosEnCarrito.ContainsKey(identificadorProducto));
     }
 
+    [TestMethod]
+    public void EliminarProductoPrueba_CC_3(){
+      var contexto = new Mock<ControllerContext>();
+      String identificadorProducto = "1Ll";
+      CarritoModel carritoMock = new CarritoModel();
+      carritoMock.ProductosEnCarrito.Add(identificadorProducto, 1);
+      contexto.Setup(carritoMockSet => carritoMockSet.HttpContext.Session["carrito"]).Returns(carritoMock);
+      contexto.Setup(carritoMockSet => carritoMockSet.HttpContext.Session["cantidadProductosCarrito"]).Returns(0);
+      CarritoController.ControllerContext = contexto.Object;
+      CarritoController.EliminarProducto(identificadorProducto);
+      CarritoModel carrito = (CarritoModel)CarritoController.Session["carrito"];
+      Assert.IsFalse(carrito.ProductosEnCarrito.ContainsKey(identificadorProducto));
+    }
   }
 }
